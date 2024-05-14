@@ -7,6 +7,6 @@ Invoke-Command -Session $Session {
         $_.Enabled -eq $true -and $_.Name -notin $Exceptions
     } | ForEach-Object {
             Disable-LocalUser $_
-            }
+    }
 }
 Get-PSSession | Remove-PSSession
