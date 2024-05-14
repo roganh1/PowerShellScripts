@@ -5,7 +5,7 @@ $Exceptions = @("Administrator", "WDAGUtilityAccount")
 Invoke-Command -Session $Session {
     Get-LocalUser | Where-Object {
         $_.Enabled -eq $true -and $_.Name -notin $Exceptions
-        } | ForEach-Object {
+    } | ForEach-Object {
             Disable-LocalUser $_
             }
 }
